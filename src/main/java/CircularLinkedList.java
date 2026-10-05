@@ -59,5 +59,21 @@ public class CircularLinkedList {
         reverseHelper(current.next);
         System.out.println(current.data + ", ");
     }
+    //find method will tell if a certain value is in the list
+    public void find(int value) {
+        if(dummy.next == dummy){
+            System.out.println("List is empty. Value cannot be found.");
+            return;
+        }
+        Node current = dummy.next;
+        while (current != dummy) {
+            if (current.data == value) {
+                System.out.println(value + " is in list.");
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println(value + " cannot be found in list.");
+    }
 }
 
