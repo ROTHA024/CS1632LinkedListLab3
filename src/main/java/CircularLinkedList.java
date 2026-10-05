@@ -43,5 +43,21 @@ public class CircularLinkedList {
         }
         System.out.println(current.data);
     }
+    //showReverse method will display the data values in the list in reverse
+    public void showReverse(){
+        if(dummy.next == dummy){
+            System.out.println("List is empty");
+            return;
+        }
+        reverseHelper(dummy.next);
+    }
+    //Helper function for showReverse
+    public void reverseHelper(Node current){
+        if(current == dummy){
+            return;
+        }
+        reverseHelper(current.next);
+        System.out.println(current.data + ", ");
+    }
 }
 
