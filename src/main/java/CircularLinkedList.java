@@ -75,5 +75,24 @@ public class CircularLinkedList {
         }
         System.out.println(value + " cannot be found in list.");
     }
+    //remove method will remove the first instance of a given value in the list
+    public void remove(int value){
+        if(dummy.next == dummy) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node previous = dummy;
+        Node current = previous.next;
+        while (current != dummy) {
+            if (current.data == value) {
+                previous.next = current.next;
+                System.out.println(value + " has been removed.");
+                return;
+            }
+            previous = current;
+            current = current.next;
+        }
+        System.out.println(value + " not found in list");
+    }
 }
 
